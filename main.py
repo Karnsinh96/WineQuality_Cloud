@@ -1,3 +1,13 @@
 from mlProject import logger
-logger.info("Hello, Welcome to Custom logging....")
-logger.info("Today is 12 Jan And I am testing my log file")
+from mlProject.pipeline.stage_01_data_ingestion import *
+
+#Stage 1 Data Ingestion
+STAGE_NAME = "Data Ingestion stage"
+try:
+   logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<") 
+   data_ingestion = DataIngestionTrainingPipeline()
+   data_ingestion.main()
+   logger.info(f">>>>>> stage {STAGE_NAME} completed <<<<<<\n\nx==========x")
+except Exception as e:
+        logger.exception(e)
+        raise e
