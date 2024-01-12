@@ -4,11 +4,15 @@ artifacts_root: artifacts
 
 # Configuration for data ingestion
 data_ingestion:
-  # Set the root directory for data ingestion under artifacts
-  root_dir: artifacts/data_ingestion
-  # Specify the source URL for the data (winequality-data.zip)
-  source_URL: https://github.com/Karnsinh96/Datasets/raw/main/WineQualityData.zip
-  # Local file path where the downloaded data (ZIP file) will be stored
-  local_data_file: artifacts/data_ingestion/data.zip
-  # Directory where the contents of the ZIP file will be extracted
-  unzip_dir: artifacts/data_ingestion
+ 
+  root_dir: artifacts/data_ingestion # Set the root directory for data ingestion under artifacts
+  source_URL: https://github.com/Karnsinh96/Datasets/raw/main/WineQuality-data.zip # Specify the source URL for the data (winequality-data.zip)
+  local_data_file: artifacts/data_ingestion/data.zip # Local file path where the downloaded data (ZIP file) will be stored
+  unzip_dir: artifacts/data_ingestion # Directory where the contents of the ZIP file will be extracted
+
+
+# Configuration for data vaidation
+data_validation:
+  root_dir: artifacts/data_validation
+  unzip_data_dir: artifacts/data_ingestion/winequality-red.csv
+  STATUS_FILE: artifacts/data_validation/status.txt
